@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from './product.model';
 
 @Component({
   selector: 'app-root',
@@ -17,12 +18,12 @@ export class AppComponent {
     code: "JS"
   };
   newEmoji = "";
-  products = [
+  products: Product[] = [
     {
       name: 'EL mejor juguete',
       price: 565,
       image: './assets/images/toy.jpg',
-      category: 'all',
+      category: "Vintage"
     },
     {
       name: 'Bicicleta casi nueva',

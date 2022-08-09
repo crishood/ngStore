@@ -1,6 +1,13 @@
 <h1>Hello Angular</h1>
 <h3>This is {{ name }}</h3>
 <h4>{{ role }}</h4>
+<p
+  class="message--error"
+  [class.invalid]="roleInput.invalid"
+  [style.font-style]="roleInput.invalid ? 'italic' : 'normal'"
+>
+  El campo es requerido
+</p>
 <p>Valid {{ roleInput.valid }}</p>
 <img [src]="image" />
 <br />
@@ -29,3 +36,21 @@
     quo magni voluptas qui ad deserunt, accusantium laborum, velit impedit!
   </p>
 </div>
+<div class="products--grid">
+  <div *ngFor="let product of products">
+    <img [src]="product.image" [alt]="product.name" width="200" />
+    <h3>{{ product.name }}</h3>
+    <p
+      [ngStyle]="{
+        color: 'white',
+        'background-color': 'blue'
+      }"
+    >
+      {{ product.price }}
+    </p>
+    <p>{{ product.category }}</p>
+  </div>
+</div>
+<p>
+  {{ [1, 2].reverse() }}
+</p>
